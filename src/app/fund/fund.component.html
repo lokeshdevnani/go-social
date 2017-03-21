@@ -1,0 +1,62 @@
+<section class="col-md-offset-1 col-md-10">
+
+<h1> Add Campaigns </h1>
+<p>Contribute by adding a Campaign to our database</p>
+
+     <form class="" action="http://emitrauat.rajasthan.gov.in/payments/v1/init" method="post"
+     >
+            <div class="form-group hidden">
+                <label for="MERCHANTCODE">MERCHANTCODE</label>
+                <input type="text" id="MERCHANTCODE" name="MERCHANTCODE" value="HACKATHON2017" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="PRN">PRN</label>
+                <input type="hidden" id="PRN" name="PRN" value="123456" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="REQTIMESTAMP">REQTIMESTAMP</label>
+                <input type="hidden" id="REQTIMESTAMP" name="REQTIMESTAMP" value="20170320125059958" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="PURPOSE">PURPOSE</label>
+                <input type="text" id="PURPOSE" name="PURPOSE" value="API tesing" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="AMOUNT">AMOUNT</label>
+                <input type="text" id="AMOUNT" name="AMOUNT" value="100.00" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="SUCCESSURL">SUCCESSURL</label>
+                <input type="hidden" id="SUCCESSURL" name="SUCCESSURL" [value]="callbackUrl + '/payment-response'" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="FAILUREURL">FAILUREURL</label>
+                <input type="hidden" id="FAILUREURL" name="FAILUREURL" [value]="callbackUrl + '/payment-response'" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="CANCELURL">CANCELURL</label>
+                <input type="hidden" id="CANCELURL" name="CANCELURL" [value]="callbackUrl + '/response-callback'" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="USERNAME">USERNAME</label>
+                <input type="text" id="USERNAME" name="USERNAME" value="vishnu" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="USERMOBILE">USERMOBILE</label>
+                <input type="text" id="USERMOBILE" name="USERMOBILE" value="9876543210" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="USEREMAIL">USEREMAIL</label>
+                <input type="text" id="USEREMAIL" name="USEREMAIL" value="abc@gmail.com" class="form-control">
+            </div>
+            <div class="form-group hidden">
+                <label for="CHECKSUM">CHECKSUM</label>
+                <input type="hidden" id="CHECKSUM" name="CHECKSUM" value="f4d74003465ff1f6523d665d517bce47" class="form-control">
+            </div>
+
+            <input type="submit" class="btn btn-success"
+                value="Submit"
+                [disabled]="!f.valid" />
+    </form>
+
+</section>

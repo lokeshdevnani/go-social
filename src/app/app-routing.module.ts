@@ -1,3 +1,4 @@
+import { FundComponent } from './fund/fund.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { OauthHandlerComponent } from './oauth-handler/oauth-handler.component';
@@ -13,11 +14,12 @@ import { MovieEditComponent } from './item-edit/item-edit.component';
 import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/campaigns', pathMatch: 'full' },
-    { path: 'campaigns',         component: MoviesListComponent },
-    { path: 'campaigns/new',     component: AddItemComponent    }, //,canActivate: [AuthGuardService]
-    { path: 'campaigns/:id',      component: ItemDetailComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'campaigns',         component: MoviesListComponent ,canActivate: [AuthGuardService]},
+    { path: 'campaigns/new',     component: AddItemComponent    ,canActivate: [AuthGuardService]}, //,canActivate: [AuthGuardService]
+    { path: 'campaigns/:id',      component: ItemDetailComponent ,canActivate: [AuthGuardService]},
     { path: 'campaigns/:id/edit', component: MovieEditComponent,  canActivate: [AuthGuardService] },
+    { path: 'fund', component: FundComponent,  canActivate: [AuthGuardService] },
     { path: 'oauth/:token',   component: OauthHandlerComponent },
     { path: 'signup',   component: SignupComponent },
     { path: 'login',   component: LoginComponent },

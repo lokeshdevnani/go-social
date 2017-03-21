@@ -20,6 +20,7 @@ import { MovieEditComponent } from './item-edit/item-edit.component';
 import { OauthHandlerComponent } from './oauth-handler/oauth-handler.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { FundComponent } from './fund/fund.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -44,6 +45,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     OauthHandlerComponent,
     SignupComponent,
     LoginComponent,
+    FundComponent,
   ],
   imports: [
     BrowserModule,
