@@ -1,0 +1,53 @@
+<section class="col-md-offset-1 col-md-10">
+
+<h1> Add Campaigns </h1>
+<p>Contribute by adding a Campaign to our database</p>
+
+<form #f="ngForm" (ngSubmit)="addMovie(f.form)">
+
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control"
+        name="title"
+        [(ngModel)]="item.title"
+        #title="ngModel"
+        required minlength="3" maxlength="50" />
+      <div *ngIf="title.touched && !title.valid"  class="alert alert-danger">
+        <div *ngIf="title.errors.required"> Campaign title is required </div>
+        <div *ngIf="title.errors.minlength"> Campaign title must be atleast {{ title.errors.minlength.requiredLength }} characters. </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Details</label>
+      <input type="text" class="form-control"
+        name="details"
+        [(ngModel)]="item.details"
+        #details="ngModel"
+        required minlength="30" maxlength="300" />
+      <div *ngIf="details.touched && !details.valid"  class="alert alert-danger">
+        <div *ngIf="details.errors.required"> Campaign details is required </div>
+        <div *ngIf="details.errors.minlength"> Campaign details must be atleast {{ details.errors.minlength.requiredLength }} characters. </div>
+        <div *ngIf="details.errors.maxlength"> Campaign details must not exceed {{ details.errors.minlength.requiredLength }} characters. </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Video Link</label>
+      <input type="text" class="form-control"
+        name="videoLink"
+        [(ngModel)]="item.videoLink"
+        #videoLink="ngModel"
+        required minlength="3" maxlength="50" />
+      <div *ngIf="videoLink.touched && !videoLink.valid"  class="alert alert-danger">
+        <div *ngIf="videoLink.errors.required"> Campaign videoLink is required </div>
+        <div *ngIf="videoLink.errors.minlength"> Campaign videoLink must be atleast {{ videoLink.errors.minlength.requiredLength }} characters. </div>
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-success"
+        value="Submit"
+        [disabled]="!f.valid" />
+</form>
+
+</section>
